@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="pref_noti_category"
+        android:title="@string/pref_noti_category">
+        <!-- You should be to use Switch UI, implement a SwitchPreferenceCompat-->
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="pref_session_noti"
+            android:title="@string/pref_session_noti" />
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="pref_friends_noti"
+            android:title="@string/pref_friends_noti" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_aboutus_category"
+        android:title="@string/pref_aboutus_category">
+        <Preference
+            android:key="pref_aboutus"
+            android:summary="@string/pref_summ_aboutus"
+            android:title="@string/pref_aboutus" />
+        <Preference
+            android:key="pref_github"
+            android:summary="@string/pref_summ_github"
+            android:title="@string/pref_github">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/pref_summ_github" />
+        </Preference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="pref_lawinfo_category"
+        android:title="@string/pref_lawinfo_category">
+        <Preference
+            android:key="pref_opensourcelicense"
+            android:title="@string/pref_opensourcelicense">
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

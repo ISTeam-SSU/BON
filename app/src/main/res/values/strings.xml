@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BON 헌혈 기부</string>
+    <string name="app_id">1509315709396327</string>
+
+    <!-- MainView -->
+    <string name="main_pager_one">Story</string>
+    <string name="main_pager_two">Thanks</string>
+    <string name="main_pager_three">Love</string>
+
+    <!-- Navigation View-->
+    <string name="home">홈</string>
+    <string name="all_schedule">전체 시간표</string>
+    <string name="my_schedule">나의 시간표</string>
+    <string name="find_friends">친구 찾기</string>
+    <string name="deview_story">#Deview2016</string>
+    <string name="location">오시는 길</string>
+    <string name="account">로그인/로그아웃</string>
+    <string name="setting">설정</string>
+    <string name="nav_category2">계정 및 설정</string>
+    <string name="please_login">로그인을 먼저 해주세요</string>
+    <string name="logout_msg">로그아웃 되었습니다</string>
+
+    <string name="navigation_drawer_open">네비게이션 뷰가 열렸습니다</string>
+    <string name="navigation_drawer_close">네비게이션 뷰가 닫혔습니다</string>
+
+    <!-- DetailSessionFragment -->
+    <string name="share_session_dialog_title">어디에 공유하시겠어요?</string>
+    <string name="detail_session_activity_title">세션 안내</string>
+
+    <!-- Setting text -->
+    <string name="pref_noti_category">알림</string>
+    <string name="pref_session_noti">선택한 세션 시작 알림</string>
+    <string name="pref_friends_noti">친구 찾기 설정</string>
+
+    <string name="pref_aboutus_category">About us</string>
+    <string name="pref_aboutus">개발자</string>
+    <string name="pref_summ_aboutus">Ace Kim - ace.jckim@gmail.com</string>
+    <string name="pref_github">프로젝트 저장소</string>
+    <string name="pref_summ_github">https://github.com/Acegugu/deviewsched-android</string>
+
+    <string name="pref_lawinfo_category">법률 정보</string>
+    <string name="pref_opensourcelicense">오픈소스 라이센스</string>
+</resources>
