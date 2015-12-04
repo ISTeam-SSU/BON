@@ -1,6 +1,7 @@
 package kr.ac.ssu.bon.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -67,6 +68,15 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
         initMaterialViewPager();
         initToolbar();
         initNavigationView();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.setBackgroundColor(Color.RED);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
     }
 
     private void initToolbar() {

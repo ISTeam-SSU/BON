@@ -84,4 +84,9 @@ public class RecyclerViewFragment extends Fragment {
 //            }
 //        });
     }
+
+    public void addItem(Board board){
+        mContentItems.add(board);
+        mAdapter.notifyDataSetChanged();
+    }
 }
