@@ -3,13 +3,30 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="58dp">
 
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/et_posting_title" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="TITLE"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_marginStart="10dp"
+            android:layout_width="300dp"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:id="@+id/et_posting_title" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -31,7 +48,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_height="match_parent">
+        android:layout_height="72dp">
 
         <Button
             android:layout_width="wrap_content"
