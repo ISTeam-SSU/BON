@@ -1,6 +1,7 @@
 package kr.ac.ssu.bon.ui;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -33,6 +35,7 @@ import kr.ac.ssu.bon.R;
 import kr.ac.ssu.bon.helper.LoginPreferenceHelper;
 import kr.ac.ssu.bon.helper.ProfileChangedListener;
 import kr.ac.ssu.bon.helper.UserProfileProvider;
+import kr.ac.ssu.bon.model.Board;
 import kr.ac.ssu.bon.model.User;
 import kr.ac.ssu.bon.util.GlideCircleTransform;
 
@@ -51,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
 
     private User mUser = new User();
 
+    private RecyclerViewFragment[] recyclerViewFragments;
+    private int pos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +69,18 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
         fragmentManager = getSupportFragmentManager();
 
 
-
         initMaterialViewPager();
         initToolbar();
         initNavigationView();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        //fab.setBackgroundColor(Color.RED);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(MainActivity.this, PostingActivity.class), PostingActivity.POSTING_REQUEST);
+            }
+        });
     }
 
     private void initToolbar() {
@@ -76,11 +90,15 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
     }
 
     private void initMaterialViewPager() {
+        recyclerViewFragments = new RecyclerViewFragment[3];
         mViewPager = (MaterialViewPager) findViewById(R.id.materialViewPager);
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return RecyclerViewFragment.newInstance(position);
+                recyclerViewFragments[position] = RecyclerViewFragment.newInstance(position);
+                pos = position;
+                Log.i("pos", pos+"");
+                return recyclerViewFragments[position];
             }
 
             @Override
@@ -174,25 +192,26 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
                         break;
 
                     case R.id.nav_survey:
-                        Toast.makeText(getApplicationContext(),"전자문진",Toast.LENGTH_SHORT).show();
-                        Uri uri = Uri.parse("https://bloodinfo.net/emi_bldqualify.do?action=emiPopup");
-                        Intent it  = new Intent(Intent.ACTION_VIEW,uri);
+                        Toast.makeText(getApplicationContext(), "전자문진", Toast.LENGTH_SHORT).show();
+                        String url = "https://bloodinfo.net/emi_bldqualify.do?action=emiPopup";
+                        Intent it = new Intent(MainActivity.this, DiagnosisActivity.class);
+                        it.putExtra("Url", url);
                         startActivity(it);
                         //showSche(getResources().getText(R.string.all_schedule));
                         break;
 
                     case R.id.nav_bloodhome:
-                        Toast.makeText(getApplicationContext(),"근처 헌혈의집",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "근처 헌혈의집", Toast.LENGTH_SHORT).show();
                         //(getResources().getText(R.string.my_schedule));
                         break;
 
                     case R.id.nav_schedule:
-                        Toast.makeText(getApplicationContext(),"스케쥴",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "스케쥴", Toast.LENGTH_SHORT).show();
                         //showFindFriends();
                         break;
 
                     case R.id.nav_history:
-                        Toast.makeText(getApplicationContext(),"히스토리",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "히스토리", Toast.LENGTH_SHORT).show();
                         //showLocation();
                         break;
 
@@ -278,13 +297,21 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        Log.i("Result", requestCode + " / " + resultCode);
         if (requestCode == AccoutActivity.ACCOUNT_REQUEST) {
             if (DeviewSchedApplication.LOGIN_STATE) {
                 mUser = UserProfileProvider.getUserProfile(getBaseContext(), 60);
                 setUserInfo();
                 //이미지를 정상적으로 못불러오는 경우가 생김
             }
+        }
+        if (resultCode == PostingActivity.POSTING_REQUEST) {
+            String title = data.getStringExtra("title");
+            String context = data.getStringExtra("context");
+            Board board = new Board(title, context, "http://file.thisisgame.com/upload/tboard/user/2011/05/08/20110508230252_2377.jpg");
+            recyclerViewFragments[pos].addItem(board);
+            Toast.makeText(getApplicationContext(), title, Toast.LENGTH_SHORT).show();
+            Log.i("fsd","sdf");
         }
     }
 

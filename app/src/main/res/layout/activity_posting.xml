@@ -23,9 +23,10 @@
             android:layout_width="300dp"
             android:layout_height="59dp"
             android:layout_gravity="center"
-            android:id="@+id/editText" />
+            android:id="@+id/et_posting_title" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -40,7 +41,7 @@
             android:layout_height="match_parent"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText2" />
+            android:id="@+id/et_posting_context" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,14 +54,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LOAD THUMBNAIL"
-            android:id="@+id/button" />
+            android:id="@+id/bt_posting_photo" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
             android:text="POST"
-            android:id="@+id/button2" />
+            android:id="@+id/bt_posting_send" />
     </LinearLayout>
 
 </LinearLayout>
