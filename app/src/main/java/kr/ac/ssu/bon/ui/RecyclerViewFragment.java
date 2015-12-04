@@ -37,6 +37,10 @@ public class RecyclerViewFragment extends Fragment {
     public static RecyclerViewFragment newInstance(int position) {
         return new RecyclerViewFragment(position);
     }
+//
+//    public static RecyclerViewFragment getInstance(int position){
+//
+//    }
 
 
     public RecyclerViewFragment(int position){
@@ -86,7 +90,7 @@ public class RecyclerViewFragment extends Fragment {
     }
 
     public void addItem(Board board){
-        mContentItems.add(board);
+        mContentItems.add(0,board);
         mAdapter.notifyDataSetChanged();
     }
 }

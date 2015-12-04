@@ -31,7 +31,8 @@
         </activity>
         <activity android:name=".ui.AccoutActivity" />
 
-
+        <activity android:name=".ui.PostingActivity"/>
+        <activity android:name=".ui.DiagnosisActivity"/>
 
         <activity
             android:name="com.facebook.FacebookActivity"
