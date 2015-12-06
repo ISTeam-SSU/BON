@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
     private User mUser = new User();
 
     private RecyclerViewFragment[] recyclerViewFragments;
-    private int pos;
+    private int pos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +123,8 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
         mViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
             @Override
             public HeaderDesign getHeaderDesign(int page) {
+                Log.i("tage",page+"");
+                pos = page;
                 switch (page) {
                     case 0:
                         return HeaderDesign.fromColorResAndDrawable(
