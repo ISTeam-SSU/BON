@@ -13,11 +13,6 @@
             android:icon="@drawable/diagnosis"
             android:title="전자문진" />
         <item
-            android:id="@+id/nav_bloodhome"
-            android:checked="true"
-            android:icon="@drawable/place"
-            android:title="가까운 헌혈의 집" />
-        <item
             android:id="@+id/nav_schedule"
             android:checked="true"
             android:icon="@drawable/schedule"

@@ -20,10 +20,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.bumptech.glide.Glide;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
@@ -171,6 +173,10 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
                     .into(mAvatarImage);
 
             mNameText.setText(mUser.name);
+            ((FrameLayout)findViewById(R.id.fl_nav_header_progressbar)).setVisibility(View.VISIBLE);
+            ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setProgressColor(Color.parseColor("#ed3b27"));
+            ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setMax(50);
+            ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setProgress(27);
         }
     }
 
@@ -200,11 +206,6 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
                         it.putExtra("Url", url);
                         startActivity(it);
                         //showSche(getResources().getText(R.string.all_schedule));
-                        break;
-
-                    case R.id.nav_bloodhome:
-                        Toast.makeText(getApplicationContext(), "근처 헌혈의집", Toast.LENGTH_SHORT).show();
-                        //(getResources().getText(R.string.my_schedule));
                         break;
 
                     case R.id.nav_schedule:

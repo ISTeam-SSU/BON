@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/chosen_account_view"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="250dp"
     android:background="@color/colorPrimary"
     android:gravity="bottom"
     android:orientation="vertical"
@@ -29,5 +29,25 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/white_alpha_87"
         android:gravity="center" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:id="@+id/fl_nav_header_progressbar"
+        android:visibility="invisible">
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+            android:id="@+id/progress_5"
+            android:layout_height="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총 기부한 횟수 27 / 50"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
 
 </LinearLayout>
