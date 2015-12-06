@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.AccoutActivity" />
-
+        <activity android:name=".ui.ManagingCardActivity"/>
         <activity android:name=".ui.PostingActivity"/>
         <activity android:name=".ui.DiagnosisActivity"/>
 

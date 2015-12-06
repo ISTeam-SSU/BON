@@ -189,8 +189,8 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_blooldonate:
-                        Toast.makeText(getApplicationContext(), "헌혈증 관리", Toast.LENGTH_SHORT).show();
-                        //showHome();
+                        Toast.makeText(getApplicationContext(),"헌혈증 관리",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, ManagingCardActivity.class));
                         break;
 
                     case R.id.nav_survey:
