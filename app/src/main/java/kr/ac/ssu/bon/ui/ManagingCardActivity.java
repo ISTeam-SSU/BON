@@ -27,5 +27,6 @@ public class ManagingCardActivity extends AppCompatActivity{
 
 
 
+
     }
 }

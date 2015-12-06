@@ -61,8 +61,13 @@ public class RecyclerViewFragment extends Fragment {
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
 
-        mAdapter = new RecyclerViewMaterialAdapter(new TestRecyclerViewAdapter(mContentItems, getActivity().getApplicationContext()));
-        mRecyclerView.setAdapter(mAdapter);
+        if(position == 0) {
+            mAdapter = new RecyclerViewMaterialAdapter(new StoryRecyclerViewAdapter(mContentItems, getActivity().getApplicationContext()));
+            mRecyclerView.setAdapter(mAdapter);
+        }else{
+            mAdapter = new RecyclerViewMaterialAdapter(new TestRecyclerViewAdapter(mContentItems, getActivity().getApplicationContext()));
+            mRecyclerView.setAdapter(mAdapter);
+        }
 
         {
             for (int i = 0; i < ITEM_COUNT; ++i) {
