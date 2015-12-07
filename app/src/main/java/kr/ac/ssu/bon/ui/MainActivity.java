@@ -1,6 +1,7 @@
 package kr.ac.ssu.bon.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -173,10 +174,14 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
                     .into(mAvatarImage);
 
             mNameText.setText(mUser.name);
+            SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+            int p5 = pref.getInt("p5", 27);
             ((FrameLayout)findViewById(R.id.fl_nav_header_progressbar)).setVisibility(View.VISIBLE);
             ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setProgressColor(Color.parseColor("#ed3b27"));
             ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setMax(50);
-            ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setProgress(27);
+            ((RoundCornerProgressBar)findViewById(R.id.progress_5)).setProgress(p5);
+            ((TextView) findViewById(R.id.tv_nav_header_count)).setText("총 기부한 횟수 " + p5+ " / 50");
+
         }
     }
 
@@ -195,12 +200,10 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_blooldonate:
-                        Toast.makeText(getApplicationContext(),"헌혈증 관리",Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(MainActivity.this, ManagingCardActivity.class));
                         break;
 
                     case R.id.nav_survey:
-                        Toast.makeText(getApplicationContext(), "전자문진", Toast.LENGTH_SHORT).show();
                         String url = "https://bloodinfo.net/emi_bldqualify.do?action=emiPopup";
                         Intent it = new Intent(MainActivity.this, DiagnosisActivity.class);
                         it.putExtra("Url", url);
@@ -209,13 +212,11 @@ public class MainActivity extends AppCompatActivity implements DeviewFragment.On
                         break;
 
                     case R.id.nav_schedule:
-                        Toast.makeText(getApplicationContext(), "스케쥴", Toast.LENGTH_SHORT).show();
-                        //showFindFriends();
+
                         break;
 
                     case R.id.nav_history:
-                        Toast.makeText(getApplicationContext(), "히스토리", Toast.LENGTH_SHORT).show();
-                        //showLocation();
+                        startActivity(new Intent(MainActivity.this, HistoryActivity.class));
                         break;
 
                     case R.id.nav_account:

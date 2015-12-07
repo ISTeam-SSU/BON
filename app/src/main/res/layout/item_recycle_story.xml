@@ -19,10 +19,12 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="#8e8e8e">
 
                 <com.android.volley.toolbox.NetworkImageView
                     android:id="@+id/iv_recycle_img"
+                    android:scaleType="centerCrop"
                     android:layout_width="match_parent"
                     android:layout_height="200dp" />
 
@@ -46,13 +48,15 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="4"
                 android:text="안녕하세요. 교내에서 소식 들으셨을거고, 현제 페이스북에도 여러명의 착한 시민분들이 차를 들어올려 구조하는 영상도..." />
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="end">
+                android:gravity="end"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/bt_recycle_story_donate"
@@ -70,8 +74,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"
                     android:layout_marginTop="8dp"
                     android:background="?attr/selectableItemBackground"
                     android:text="more"

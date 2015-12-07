@@ -1,5 +1,7 @@
 package kr.ac.ssu.bon.ui;
 
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -61,12 +63,15 @@ public class TestRecyclerViewAdapter extends RecyclerView.Adapter<ViewerHolder> 
         final Board board = list.get(position);
 
         holder.mRecycleHolder.mTitle.setText(board.title);
+        holder.mRecycleHolder.mContext.setText(board.context);
         holder.mRecycleHolder.mImage.setImageUrl(board.imageUrl, mImageLoader);
         holder.mRecycleHolder.mlikeButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "클릭클릭", Toast.LENGTH_SHORT).show();
+                MoreDialogFragment dialog = new MoreDialogFragment(board);
+                FragmentManager fm = ((Activity) context).getFragmentManager();
+                dialog.show(fm, "fm");
             }
         });
 

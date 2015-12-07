@@ -46,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="총 기부한 횟수 27 / 50"
+            android:id="@+id/tv_nav_header_count"
             android:layout_gravity="center"/>
     </FrameLayout>
 

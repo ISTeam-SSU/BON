@@ -45,31 +45,52 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="14sp"
         android:text="전체"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
     <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
         android:id="@+id/progress_1"
         android:layout_height="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"/>
         <!--app:backgroundPadding="5dp"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27 / 50"
+            android:id="@+id/tv_managecard_1"
+            android:layout_gravity="center"/>
+    </FrameLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="14sp"
+        android:layout_marginTop="6dp"
         android:layout_marginLeft="16dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="전혈"/>
-    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
-        android:id="@+id/progress_2"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_width="match_parent"/>
-    <!--app:backgroundPadding="5dp"-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+            android:id="@+id/progress_2"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"/>
+        <!--app:backgroundPadding="5dp"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27 / 50"
+            android:id="@+id/tv_managecard_2"
+            android:layout_gravity="center"/>
+    </FrameLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,15 +98,25 @@
         android:layout_marginLeft="16dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="혈장"/>
-    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
-        android:id="@+id/progress_3"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_width="match_parent"/>
-    <!--app:backgroundPadding="5dp"-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+            android:id="@+id/progress_3"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"/>
+        <!--app:backgroundPadding="5dp"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27 / 50"
+            android:id="@+id/tv_managecard_3"
+            android:layout_gravity="center"/>
+    </FrameLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,13 +124,23 @@
         android:layout_marginLeft="16dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="혈소판"/>
-    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
-        android:id="@+id/progress_4"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_width="match_parent"/>
-    <!--app:backgroundPadding="5dp"-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+            android:id="@+id/progress_4"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"/>
+        <!--app:backgroundPadding="5dp"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27 / 50"
+            android:id="@+id/tv_managecard_4"
+            android:layout_gravity="center"/>
+    </FrameLayout>
 </LinearLayout>

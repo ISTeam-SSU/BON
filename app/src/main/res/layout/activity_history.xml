@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        android:weightSum="7">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:background="#00ffffff"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/readingTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="6"
+            android:gravity="center_vertical"
+            android:text="기부 히스토리"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/iv_history_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_history_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="헌혈해주세요..."
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_history_context"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="6"
+                android:text="aㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

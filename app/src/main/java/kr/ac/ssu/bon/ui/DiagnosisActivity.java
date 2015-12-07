@@ -19,7 +19,6 @@ public class DiagnosisActivity extends AppCompatActivity implements View.OnClick
 
     TextView textView;
     Intent intent;
-    ImageButton imageButton;
     ImageButton backButton;
     WebView webView;
 
@@ -30,7 +29,6 @@ public class DiagnosisActivity extends AppCompatActivity implements View.OnClick
 
         intent = getIntent();
         textView = (TextView)findViewById(R.id.readingTextView);
-        imageButton = (ImageButton)findViewById(R.id.readingimageButton);
         backButton = (ImageButton)findViewById(R.id.backButton);
         webView = (WebView)findViewById(R.id.readingwebView);
 
@@ -43,7 +41,6 @@ public class DiagnosisActivity extends AppCompatActivity implements View.OnClick
 
         webView.loadUrl(intent.getStringExtra("Url"));
 
-        imageButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
 
     }
